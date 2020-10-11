@@ -35,7 +35,8 @@
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		15C6AA5EFE3E4401B603FFBE /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
-		18F9FC822515A6B90012459A /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = ../../../CinderOpenCV.h; sourceTree = "<group>"; };
+		18A303DA25335BF200E0F811 /* Blob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blob.h; sourceTree = "<group>"; };
+		18A303DC25335DB000E0F811 /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = ../../../CinderOpenCV.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		3EAB569E5962405CA5A8C080 /* BlobDetection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BlobDetection.cpp; path = ../src/BlobDetection.cpp; sourceTree = "<group>"; };
@@ -43,9 +44,9 @@
 		590368396E094FEFA819C240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E148C30A22C48E0B77B27BC /* Osc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = Osc.cpp; path = ../../blocks/OSC/src/cinder/osc/Osc.cpp; sourceTree = "<group>"; };
 		60072898DB0B42CAA23BFB7E /* Osc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Osc.h; path = ../../blocks/OSC/src/cinder/osc/Osc.h; sourceTree = "<group>"; };
-		7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderProjectBase_Prefix.pch; sourceTree = "<group>"; };
+		7C271D6A5A3F44C88CF1331A /* BlobDetection_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlobDetection_Prefix.pch; sourceTree = "<group>"; };
 		8297F80629D84B788A21A537 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* CinderProjectBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinderProjectBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* BlobDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlobDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +126,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* CinderProjectBase.app */,
+				8D1107320486CEB800E47090 /* BlobDetection.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,8 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				8297F80629D84B788A21A537 /* Resources.h */,
-				18F9FC822515A6B90012459A /* CinderOpenCV.h */,
-				7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */,
+				18A303DA25335BF200E0F811 /* Blob.h */,
+				18A303DC25335DB000E0F811 /* CinderOpenCV.h */,
+				7C271D6A5A3F44C88CF1331A /* BlobDetection_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -198,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* CinderProjectBase */ = {
+		8D1107260486CEB800E47090 /* BlobDetection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "CinderProjectBase" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "BlobDetection" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -210,10 +212,10 @@
 			);
 			dependencies = (
 			);
-			name = CinderProjectBase;
+			name = BlobDetection;
 			productInstallPath = "$(HOME)/Applications";
 			productName = CinderProjectBase;
-			productReference = 8D1107320486CEB800E47090 /* CinderProjectBase.app */;
+			productReference = 8D1107320486CEB800E47090 /* BlobDetection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +225,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CinderProjectBase" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BlobDetection" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -237,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* CinderProjectBase */,
+				8D1107260486CEB800E47090 /* BlobDetection */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +278,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
+				GCC_PREFIX_HEADER = BlobDetection_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -348,7 +350,7 @@
 					"-lopencv_core\n",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = CinderProjectBase;
+				PRODUCT_NAME = BlobDetection;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -365,7 +367,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
+				GCC_PREFIX_HEADER = BlobDetection_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
@@ -437,7 +439,7 @@
 					"-lopencv_core\n",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = CinderProjectBase;
+				PRODUCT_NAME = BlobDetection;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -481,7 +483,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "CinderProjectBase" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "BlobDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -490,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CinderProjectBase" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BlobDetection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
