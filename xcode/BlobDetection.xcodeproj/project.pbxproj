@@ -16,14 +16,11 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		196E99BAFFEC49EB9F31C3B8 /* BlobDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB569E5962405CA5A8C080 /* BlobDetection.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		2F3D65F3B77A401B9D247D1A /* Osc.h in Headers */ = {isa = PBXBuildFile; fileRef = 60072898DB0B42CAA23BFB7E /* Osc.h */; };
-		A285BEEE8C4145D58F41AE62 /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E148C30A22C48E0B77B27BC /* Osc.cpp */; };
-		8C62F72A845043379EF185CB /* CinderProjectBase_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */; };
 		5C892B8999F246D383336426 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 15C6AA5EFE3E4401B603FFBE /* CinderApp.icns */; };
-		2C7C3D5B0DA54287AA98A2BA /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 8297F80629D84B788A21A537 /* Resources.h */; };
-		196E99BAFFEC49EB9F31C3B8 /* CinderProjectBaseApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB569E5962405CA5A8C080 /* CinderProjectBaseApp.cpp */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A285BEEE8C4145D58F41AE62 /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E148C30A22C48E0B77B27BC /* Osc.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,17 +34,18 @@
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		15C6AA5EFE3E4401B603FFBE /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		18F9FC822515A6B90012459A /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = ../../../CinderOpenCV.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3EAB569E5962405CA5A8C080 /* BlobDetection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BlobDetection.cpp; path = ../src/BlobDetection.cpp; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		590368396E094FEFA819C240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E148C30A22C48E0B77B27BC /* Osc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = Osc.cpp; path = ../../blocks/OSC/src/cinder/osc/Osc.cpp; sourceTree = "<group>"; };
+		60072898DB0B42CAA23BFB7E /* Osc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Osc.h; path = ../../blocks/OSC/src/cinder/osc/Osc.h; sourceTree = "<group>"; };
+		7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderProjectBase_Prefix.pch; sourceTree = "<group>"; };
+		8297F80629D84B788A21A537 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CinderProjectBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinderProjectBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EAB569E5962405CA5A8C080 /* CinderProjectBaseApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/CinderProjectBaseApp.cpp; sourceTree = "<group>"; name = CinderProjectBaseApp.cpp; };
-		8297F80629D84B788A21A537 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		15C6AA5EFE3E4401B603FFBE /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		590368396E094FEFA819C240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderProjectBase_Prefix.pch; sourceTree = "<group>"; name = CinderProjectBase_Prefix.pch; };
-		5E148C30A22C48E0B77B27BC /* Osc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../blocks/OSC/src/cinder/osc/Osc.cpp; sourceTree = "<group>"; name = Osc.cpp; };
-		60072898DB0B42CAA23BFB7E /* Osc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../blocks/OSC/src/cinder/osc/Osc.h; sourceTree = "<group>"; name = Osc.h; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				FFEC9FD698934410963CE6F2 /* OSC */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3EAB569E5962405CA5A8C080 /* CinderProjectBaseApp.cpp */,
+				3EAB569E5962405CA5A8C080 /* BlobDetection.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -107,6 +113,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		147D0D001D8749F0A9AC84F7 /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				5E148C30A22C48E0B77B27BC /* Osc.cpp */,
+				60072898DB0B42CAA23BFB7E /* Osc.h */,
+			);
+			name = osc;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,51 +143,11 @@
 			name = CinderProjectBase;
 			sourceTree = "<group>";
 		};
-		147D0D001D8749F0A9AC84F7 /* osc */ = {
-			isa = PBXGroup;
-			children = (
-				5E148C30A22C48E0B77B27BC /* Osc.cpp */,
-				60072898DB0B42CAA23BFB7E /* Osc.h */,
-			);
-			name = osc;
-			sourceTree = "<group>";
-		};
-		E2115DEC85FE41D59D186E21 /* cinder */ = {
-			isa = PBXGroup;
-			children = (
-				147D0D001D8749F0A9AC84F7 /* osc */,
-			);
-			name = cinder;
-			sourceTree = "<group>";
-		};
-		530B725DF9A14C59A0C5C907 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E2115DEC85FE41D59D186E21 /* cinder */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		FFEC9FD698934410963CE6F2 /* OSC */ = {
-			isa = PBXGroup;
-			children = (
-				530B725DF9A14C59A0C5C907 /* src */,
-			);
-			name = OSC;
-			sourceTree = "<group>";
-		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				FFEC9FD698934410963CE6F2 /* OSC */,
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				8297F80629D84B788A21A537 /* Resources.h */,
+				18F9FC822515A6B90012459A /* CinderOpenCV.h */,
 				7C271D6A5A3F44C88CF1331A /* CinderProjectBase_Prefix.pch */,
 			);
 			name = Headers;
@@ -194,6 +169,30 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		530B725DF9A14C59A0C5C907 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E2115DEC85FE41D59D186E21 /* cinder */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		E2115DEC85FE41D59D186E21 /* cinder */ = {
+			isa = PBXGroup;
+			children = (
+				147D0D001D8749F0A9AC84F7 /* osc */,
+			);
+			name = cinder;
+			sourceTree = "<group>";
+		};
+		FFEC9FD698934410963CE6F2 /* OSC */ = {
+			isa = PBXGroup;
+			children = (
+				530B725DF9A14C59A0C5C907 /* src */,
+			);
+			name = OSC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +221,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CinderProjectBase" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -257,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				196E99BAFFEC49EB9F31C3B8 /* CinderProjectBaseApp.cpp in Sources */,
+				196E99BAFFEC49EB9F31C3B8 /* BlobDetection.cpp in Sources */,
 				A285BEEE8C4145D58F41AE62 /* Osc.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,21 +270,83 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\"",
+					/usr/local/Cellar/opencv/4.4.0_1/include/opencv4,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.4.0_1/include/opencv4;
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"",
+					"-I/usr/local/Cellar/opencv/4.4.0_1/include/opencv4",
+					"-L/usr/local/Cellar/opencv/4.4.0_1/lib",
+					"-lopencv_gapi",
+					"-lopencv_stitching",
+					"-lopencv_alphamat",
+					"-lopencv_aruco",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dnn_superres",
+					"-lopencv_dpm",
+					"-lopencv_highgui",
+					"-lopencv_face",
+					"-lopencv_freetype",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_intensity_transform",
+					"-lopencv_line_descriptor",
+					"-lopencv_quality",
+					"-lopencv_rapid",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_sfm",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_superres",
+					"-lopencv_optflow",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_datasets",
+					"-lopencv_text",
+					"-lopencv_dnn",
+					"-lopencv_plot",
+					"-lopencv_videostab",
+					"-lopencv_videoio",
+					"-lopencv_viz",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_video",
+					"-lopencv_xobjdetect",
+					"-lopencv_objdetect",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_xphoto",
+					"-lopencv_photo",
+					"-lopencv_imgproc",
+					"-lopencv_core\n",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CinderProjectBase;
 				SYMROOT = ./build;
@@ -301,16 +364,78 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CinderProjectBase_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\"",
+					/usr/local/Cellar/opencv/4.4.0_1/include/opencv4,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"";
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.4.0_1/include/opencv4;
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/macosx/$(CONFIGURATION)/libcinder.a\"",
+					"-I/usr/local/Cellar/opencv/4.4.0_1/include/opencv4",
+					"-L/usr/local/Cellar/opencv/4.4.0_1/lib",
+					"-lopencv_gapi",
+					"-lopencv_stitching",
+					"-lopencv_alphamat",
+					"-lopencv_aruco",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dnn_superres",
+					"-lopencv_dpm",
+					"-lopencv_highgui",
+					"-lopencv_face",
+					"-lopencv_freetype",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_intensity_transform",
+					"-lopencv_line_descriptor",
+					"-lopencv_quality",
+					"-lopencv_rapid",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_sfm",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_superres",
+					"-lopencv_optflow",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_datasets",
+					"-lopencv_text",
+					"-lopencv_dnn",
+					"-lopencv_plot",
+					"-lopencv_videostab",
+					"-lopencv_videoio",
+					"-lopencv_viz",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_video",
+					"-lopencv_xobjdetect",
+					"-lopencv_objdetect",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_xphoto",
+					"-lopencv_photo",
+					"-lopencv_imgproc",
+					"-lopencv_core\n",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CinderProjectBase;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -323,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../..";
+				CINDER_PATH = ../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
@@ -333,10 +458,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../../blocks/OSC/src,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../blocks/OSC/src";
 			};
 			name = Debug;
 		};
@@ -344,7 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../..";
+				CINDER_PATH = ../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -352,10 +474,7 @@
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../../blocks/OSC/src,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../blocks/OSC/src";
 			};
 			name = Release;
 		};
