@@ -92,6 +92,7 @@ protected:
     void createBlobs(); //creates the blob objects for each keypoint
 
     void blobTracking(); //finds distancec between blobs to track them
+    void updateBlobList();//update blobs
     int newBlobID; //the id to assign a new blob.
 
     
@@ -235,6 +236,7 @@ void BlobDetection::update()
     //create blob objects from keypoints
     createBlobs();
     blobTracking();
+    updateBlobList();
 }
 
 void BlobDetection::createBlobs()
@@ -259,21 +261,63 @@ void BlobDetection::blobTracking(){
     //b. You can use ci::distance(ci::vec2, ci::vec2) + fromOcv() to find the distance (or just implement Euclidean distance yourself)
 //    mBlobs.clear();
     for(int i=1; i<mKeyPoints.size();i++){
+        std::vector<cv::KeyPoint>   mPrevKeyPoints;
+        mPrevKeyPoints.push_back(mKeyPoints[i-1]);
+        //get x and y points
         int x1= mKeyPoints[i].pt.x;
-        int x2=  mKeyPoints[i-1].pt.x;
+        int x2=  mPrevKeyPoints[i].pt.x;
         int y1= mKeyPoints[i].pt.y;
-        int y2=  mKeyPoints[i-1].pt.y;
+        int y2=  mPrevKeyPoints[i].pt.y;
         
+        //calculate euclidean distance
         int dist=   sqrt((x1-x2)^2 + (y1-y2)^2);
 
-   // vector<int>distance;
-   // for(int i=0; i<mKeyPoints.size(); i++){
-      //  mKeyPoints[i]-mKeyPoints[i-1];
-        std::cout<<"dist"<<dist<<"i"<< i<<std::endl;}
-       // distance.push_back(dist);
+
+        if(dist<=20){
+            mMapPrevToCurKeypoints.push_back(1);
+            std::cout<<"less that 20"<<std::endl;
+        }
+        if(dist>20){
+            mMapPrevToCurKeypoints.push_back(-1);
+            std::cout<<"greater than 20"<<std::endl;
+        }
         
-      
-    //}
+    }
+     
+}
+
+void BlobDetection::updateBlobList()
+{
+  /*  Update the mBlobs using the mMapPrevToCurKeypoints.
+
+    a. I found the most straightforward way to do this was to create a prevBlobs vector. Then, assign prevBlobs = mBlobs and clear the mBlobs ( mBlobs.clear() ).
+
+    b. Use a for-loop to iterate through mMapPrevToCurKeypoints. Use the value of mMapPrevToCurKeypoints at index "i" to find the index of where the blob at mKeyPoints[i] is in mPrevKeypoints.
+
+    i. If the value at the specified index (i) is -1 in mMapPrevToCurKeypoints, then create a new Blob and add to mBlobs. ( I would just instantiate a new class & not do this with pointers but you're welcome to manage your own memory if you'd like). )
+
+
+    ii. Otherwise, access from the prevBlobs using the value from mMapPrevToCurKeypoints.
+
+    Then update that old blob with the new keypoint from mKeyPoints
+
+    Then add to mBlobs.*/
+    
+    //std::vec
+    
+    std::vector<Blob> mPrevBlobs;
+    mPrevBlobs=mBlobs;
+    mBlobs.clear();
+    
+    for(int i=0; i<mMapPrevToCurKeypoints.size(); i++)  //I dont really think this is correct?
+    
+    {
+        int  ind=mMapPrevToCurKeypoints[i];
+        if(ind==-1){
+            createBlobs();
+        }
+        
+    }
 }
 
 void BlobDetection::draw()
