@@ -258,26 +258,22 @@ void BlobDetection::blobTracking(){
 
     //b. You can use ci::distance(ci::vec2, ci::vec2) + fromOcv() to find the distance (or just implement Euclidean distance yourself)
 //    mBlobs.clear();
-//    for(int i=0; i<mKeyPoints.size();i++){
-//  int dist=  mMapPrevToCurKeypoints.push_back(mKeyPoints[i],mKeyPoints[i-1]);
-//
-//    }
-   // int dist;
-    vector<int>distance;
-    for(int i=0; i<mKeyPoints.size(); i++){
+    for(int i=1; i<mKeyPoints.size();i++){
+        int x1= mKeyPoints[i].pt.x;
+        int x2=  mKeyPoints[i-1].pt.x;
+        int y1= mKeyPoints[i].pt.y;
+        int y2=  mKeyPoints[i-1].pt.y;
+        
+        int dist=   sqrt((x1-x2)^2 + (y1-y2)^2);
+
+   // vector<int>distance;
+   // for(int i=0; i<mKeyPoints.size(); i++){
       //  mKeyPoints[i]-mKeyPoints[i-1];
-        //std::cout<<"dist"<<dist<<std::endl;
+        std::cout<<"dist"<<dist<<"i"<< i<<std::endl;}
        // distance.push_back(dist);
         
       
-    }
-//    if(distance.data()){
-//              int maxDistance=*std::max_element(distance.begin(), distance.end());
-//              std::cout<<"max distance"<<maxDistance<<std::endl;
-//          }
-    
-//    for(int i=1; i< mKeyPoints.size(); i++){
-//    }
+    //}
 }
 
 void BlobDetection::draw()
