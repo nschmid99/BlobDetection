@@ -259,95 +259,105 @@ void BlobDetection::createBlobs()
 }
 
 void BlobDetection::blobTracking(){
-    //Create mMapPrevToCurKeypoints - an std::vector<int> that maps where points are now (mKeypoints) to where they were in the last frame (mPrevKeypoints)
 
-   // a. Find the closest point (point with minimum distance) in mPrevKeypoints for each keypoint in mKeypoints.
-
-   // i. Add a -1 to the mMapPrevToCurKeypoints if the minimum distance is larger than some threshold minimum. That is, if no points are close in the previous frame, then it didn't exist in the previous frame.
-
-    //b. You can use ci::distance(ci::vec2, ci::vec2) + fromOcv() to find the distance (or just implement Euclidean distance yourself)
-   // mMapPrevToCurKeypoints.clear();
-
-   
-    for(int j=0; j<mPrevKeyPoints.size(); j++)
-    {
-         std::cout<<"newRound"<<std::endl;
-        
-    for(int i=0; i<mKeyPoints.size();i++)
-    {
-   
-        int x1= mKeyPoints[i].pt.x;
-        int x2=  mPrevKeyPoints[j].pt.x;
-        int y1= mKeyPoints[i].pt.y;
-        int y2=  mPrevKeyPoints[j].pt.y;
-            
-        
-        //calculate euclidean distance
-        int dist =abs(((x1-x1)^2) + ((y1-y2)^2));
-       // sqrt?
+    std::vector<int> mindist;
+    mindist.clear();
+    int saveI;
     
-//        std::cout<<"dist"<<dist<<std::endl;
-//        std::vector<int> mindist;
-//        mindist.push_back(dist);
+    //cycle through and check distance
+    for(int j=0; j<mPrevKeyPoints.size(); j++)
+//    {
+//    for(int i=0; i<mKeyPoints.size();i++)
+//    {
+//        //calculate distance
+//        int d=ci::distance(fromOcv(mKeyPoints[i].pt), fromOcv(mPrevKeyPoints[j].pt));
+//        //std::cout<<"d"<<d<<std::endl;
+//
+//      //save distance to a vector and save index value
+//
+//        mindist.push_back(d);
+//        saveI=i;
+//
+//
+//    }
+//
+//        mindist.erase(remove(mindist.begin(),mindist.end(),0),mindist.end());
+//        //calculate closest distance
 //        int min=*min_element(mindist.begin(),mindist.end());
 //        std::cout<<"min"<<min<<std::endl;
-     
-
-        if(dist<=minDist && dist>0){
-             mMapPrevToCurKeypoints.push_back(i);
-        }
-        if(dist>minDist)
-        {
-             mMapPrevToCurKeypoints.push_back(-1);
-             std::cout<<"greater than 10"<<std::endl;
-
-     }
-        //find minimum distance within previos keypoints
-        //then test if that meets absolute minimum
-        //10 is far to low 100 maybe
-    }
+//
+        //if minimum distance meets the threshold save the index to map
+//        if(min<=minDist && min>=0)
+//        {
+//            mMapPrevToCurKeypoints.push_back(saveI);
+//        }
+//
+//        //if minimum distance exceeds the threshold save -1 to map
+//        if(min>minDist)
+//        {
+//            mMapPrevToCurKeypoints.push_back(-1);
+//
+//        }
         
-    }
-     
-}
+  //  }
+        for(int j=0; j<mPrevKeyPoints.size(); j++)
+          {
+          for(int i=0; i<mKeyPoints.size();i++)
+          {
+     //Alternative to above code just for  me to  have
+              int x1= mKeyPoints[i].pt.x;
+              int x2=  mPrevKeyPoints[j].pt.x;
+              int y1= mKeyPoints[i].pt.y;
+              int y2=  mPrevKeyPoints[j].pt.y;
+      
+      
+              //calculate euclidean distance
+              int dist =abs(((x1-x2)^2) + ((y1-y2)^2));
+      
+
+              if(dist<=minDist && dist>0){
+                   mMapPrevToCurKeypoints.push_back(i);
+              }
+              if(dist>minDist)
+              {
+                   mMapPrevToCurKeypoints.push_back(-1);
+                   std::cout<<"greater than 10"<<std::endl;
+      
+              }}
+//              find minimum distance within previos keypoints
+//              then test if that meets absolute minimum
+//              10 is far to low 100 maybe
+//
+          }}
 
 void BlobDetection::updateBlobList()
 {
- 
-    
- 
+    //save blobs to previousblobs and clear it
     mPrevBlobs=mBlobs;
     mBlobs.clear();
-    int ind=0;
     newBlobID=0;
     
-    
+    //cycle through map
     for(int i=0; i<mMapPrevToCurKeypoints.size(); i++)
     
     {
-        std::cout<<"mps"<<mPrevBlobs.size()<<std::endl;
-          std::cout<<"mbs"<<mBlobs.size()<<std::endl;
-        ind=mMapPrevToCurKeypoints[i];
+        //find value at location i of map
+       int ind=mMapPrevToCurKeypoints[i];
+        
+        //if value is -1,
         if(ind==-1)
         {
-          /*  i. If the value at the specified index (i) is -1 in mMapPrevToCurKeypoints, then create a new Blob and add to mBlobs. ( I would just instantiate a new class & not do this with pointers but you're welcome to manage your own memory if you'd like). )*/
             newBlobID++;
             mBlobs.push_back(Blob(mKeyPoints[i], newBlobID));
-
-
         }
+        
         else
         {
-             /*Use a for-loop to iterate through mMapPrevToCurKeypoints. Use the value of mMapPrevToCurKeypoints at index "i" to find the index of where the blob at mKeyPoints[i] is in mPrevKeypoints.*/
-            std::cout<<"ind"<<ind<<std::endl;
- 
-          //  mPrevBlobs[ind].update( cv::KeyPoint(60,70,10) );
-            
             mPrevBlobs[ind].update( mKeyPoints[i]);
-            mBlobs.push_back(mPrevBlobs[ind]);
+            mBlobs.push_back(mPrevBlobs[mMapPrevToCurKeypoints[ind]]);
 
         }
-//
+
     }
     
 
