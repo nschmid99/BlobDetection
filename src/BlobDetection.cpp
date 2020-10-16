@@ -261,74 +261,48 @@ void BlobDetection::createBlobs()
 void BlobDetection::blobTracking(){
 
     std::vector<int> mindist;
-    mindist.clear();
-    int saveI;
+    
+   // int saveI;
+    int min;
     
     //cycle through and check distance
-    for(int j=0; j<mPrevKeyPoints.size(); j++)
-//    {
-//    for(int i=0; i<mKeyPoints.size();i++)
-//    {
-//        //calculate distance
-//        int d=ci::distance(fromOcv(mKeyPoints[i].pt), fromOcv(mPrevKeyPoints[j].pt));
-//        //std::cout<<"d"<<d<<std::endl;
-//
-//      //save distance to a vector and save index value
-//
-//        mindist.push_back(d);
-//        saveI=i;
-//
-//
-//    }
-//
-//        mindist.erase(remove(mindist.begin(),mindist.end(),0),mindist.end());
-//        //calculate closest distance
-//        int min=*min_element(mindist.begin(),mindist.end());
-//        std::cout<<"min"<<min<<std::endl;
-//
-        //if minimum distance meets the threshold save the index to map
-//        if(min<=minDist && min>=0)
-//        {
-//            mMapPrevToCurKeypoints.push_back(saveI);
-//        }
-//
-//        //if minimum distance exceeds the threshold save -1 to map
-//        if(min>minDist)
-//        {
-//            mMapPrevToCurKeypoints.push_back(-1);
-//
-//        }
-        
-  //  }
-        for(int j=0; j<mPrevKeyPoints.size(); j++)
-          {
-          for(int i=0; i<mKeyPoints.size();i++)
-          {
-     //Alternative to above code just for  me to  have
-              int x1= mKeyPoints[i].pt.x;
-              int x2=  mPrevKeyPoints[j].pt.x;
-              int y1= mKeyPoints[i].pt.y;
-              int y2=  mPrevKeyPoints[j].pt.y;
-      
-      
-              //calculate euclidean distance
-              int dist =abs(((x1-x2)^2) + ((y1-y2)^2));
-      
+    for(int j=0; j<mKeyPoints.size(); j++)
+    {
+        mindist.clear();
+    for(int i=0; i<mPrevKeyPoints.size();i++)
+    {
+        //calculate distance
+        int d=ci::distance(fromOcv(mKeyPoints[i].pt), fromOcv(mPrevKeyPoints[j].pt));
 
-              if(dist<=minDist && dist>0){
-                   mMapPrevToCurKeypoints.push_back(i);
-              }
-              if(dist>minDist)
-              {
-                   mMapPrevToCurKeypoints.push_back(-1);
-                   std::cout<<"greater than 10"<<std::endl;
-      
-              }}
-//              find minimum distance within previos keypoints
-//              then test if that meets absolute minimum
-//              10 is far to low 100 maybe
-//
-          }}
+        //save distance to a vector
+        mindist.push_back(d);
+
+        //remove any false 0's
+        mindist.erase(std::remove(mindist.begin(),mindist.end(),0),mindist.end());
+        
+        //find minimum distance
+        min=*min_element(mindist.begin(),mindist.end());
+        
+        // if minimum distance meets the threshold save the index to map
+        if(min<=minDist)
+            {
+                mMapPrevToCurKeypoints.push_back(i);
+                 std::cout<<"in thresh"<<i<<std::endl;
+            }
+
+            //if minimum distance exceeds the threshold save -1 to map
+             if(min>minDist)
+            {
+                mMapPrevToCurKeypoints.push_back(-1);
+                std::cout<<"exceeds thresh"<<-1<<std::endl;
+            }
+    }
+
+
+    }
+
+    
+}
 
 void BlobDetection::updateBlobList()
 {
@@ -344,13 +318,14 @@ void BlobDetection::updateBlobList()
         //find value at location i of map
        int ind=mMapPrevToCurKeypoints[i];
         
-        //if value is -1,
+        //if value is -1, create new blob
         if(ind==-1)
         {
             newBlobID++;
             mBlobs.push_back(Blob(mKeyPoints[i], newBlobID));
         }
         
+        //if not, uppdate blob keypoints
         else
         {
             mPrevBlobs[ind].update( mKeyPoints[i]);
